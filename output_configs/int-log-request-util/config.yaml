@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Log Request Util
+  - name: Log Request Util
     source: GITHUB
     repo: vcep-int-log-request-util
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-log-request-logic-CI
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-log-request-logic-CI
         job: Job
+        project: RCXP

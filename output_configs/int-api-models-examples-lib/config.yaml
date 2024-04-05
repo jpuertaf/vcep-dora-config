@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Api Models Examples Lib
+  - name: Api Models Examples Lib
     source: GITHUB
     repo: vcep-int-api-models-examples-lib
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-api-models-examples-nuget CI
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-api-models-examples-nuget CI
         job: Job
+        project: RCXP

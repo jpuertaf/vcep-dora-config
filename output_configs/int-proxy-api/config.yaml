@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Proxy Api
+  - name: Proxy Api
     source: GITHUB
     repo: vcep-int-proxy-api
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-proxy-api-CI
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-proxy-api-CI
         job: Job
+        project: RCXP

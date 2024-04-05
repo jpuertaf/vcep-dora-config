@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Salesforce Events Outbound
+  - name: Salesforce Events Outbound
     source: GITHUB
     repo: vcep-int-salesforce-events-outbound
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-salesforce-httpevents-logic-CI
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-salesforce-httpevents-logic-CI
         job: Job
+        project: RCXP

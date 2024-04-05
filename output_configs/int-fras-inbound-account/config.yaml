@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Fras Inbound Account
+  - name: Fras Inbound Account
     source: GITHUB
     repo: vcep-int-fras-inbound-account
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: vcep-int-fras-inbound-account-CI
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: vcep-int-fras-inbound-account-CI
         job: Job
+        project: RCXP

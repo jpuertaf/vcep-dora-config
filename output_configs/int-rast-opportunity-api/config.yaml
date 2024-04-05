@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Rast Opportunity Api
+  - name: Rast Opportunity Api
     source: GITHUB
     repo: vcep-int-rast-opportunity-api
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: rast-opportunity-api-bizops-PoC
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: rast-opportunity-api-bizops-PoC
         job: Job
+        project: RCXP

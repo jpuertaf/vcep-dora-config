@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Vehicle Order Inbound
+  - name: Vehicle Order Inbound
     source: GITHUB
     repo: vcep-int-vehicle-order-inbound
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-vehicle-order-logic
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-vehicle-order-logic
         job: Job
+        project: RCXP

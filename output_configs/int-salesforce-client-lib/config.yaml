@@ -3,21 +3,19 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: Salesforce Client Lib
+  - name: Salesforce Client Lib
     source: GITHUB
     repo: vcep-int-salesforce-client-lib
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-salesforce-client-nuget CI
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: int-salesforce-client-nuget CI
         job: Job
+        project: RCXP
