@@ -9,24 +9,22 @@ cluster: Customer Care
 team: Vcep Integration Team
 tags: [Integration Platform, VCEP]
 services:
-  -
-    name: {service_name}
+  - name: {service_name}
     source: GITHUB
     repo: {git_repo_name}
-    project: RCXP
     environments:  
-      -
-        name: uat
+      - name: uat
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: {pipeline_name}
         job: Job
-      -
-        name: prod-emea
+        project: RCXP
+      - name: prod-emea
         branch: master
         pipeline: AZURE_PIPELINES
         workflow: {pipeline_name}
         job: Job
+        project: RCXP
 """
 
 def format_name(name):
