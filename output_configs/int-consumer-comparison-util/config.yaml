@@ -1,0 +1,23 @@
+project_name: Consumer Comparison Util
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Consumer Comparison Util
+    source: GITHUB
+    repo: vcep-int-consumer-comparison-util
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-consumer-comparison-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-consumer-comparison-logic CI
+        job: Job

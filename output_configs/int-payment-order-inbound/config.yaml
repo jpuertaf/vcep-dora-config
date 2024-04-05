@@ -1,0 +1,23 @@
+project_name: Payment Order Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Payment Order Inbound
+    source: GITHUB
+    repo: vcep-int-payment-order-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-payment-order-inbound-function-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-payment-order-inbound-function-CI
+        job: Job

@@ -1,0 +1,23 @@
+project_name: Spin Api
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Spin Api
+    source: GITHUB
+    repo: vcep-int-spin-api
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-spin-api-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-spin-api-CI
+        job: Job

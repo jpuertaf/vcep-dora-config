@@ -1,0 +1,23 @@
+project_name: Integration Api
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Integration Api
+    source: GITHUB
+    repo: vcep-int-integration-api
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-integration-api CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-integration-api CI
+        job: Job

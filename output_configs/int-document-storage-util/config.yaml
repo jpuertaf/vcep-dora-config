@@ -1,0 +1,23 @@
+project_name: Document Storage Util
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Document Storage Util
+    source: GITHUB
+    repo: vcep-int-document-storage-util
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-document-storage-util CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-document-storage-util CI
+        job: Job

@@ -1,0 +1,23 @@
+project_name: Tc Bilvision
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Tc Bilvision
+    source: GITHUB
+    repo: vcep-int-tc-bilvision
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: vcep-int-tc-bilvision-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: vcep-int-tc-bilvision-CI
+        job: Job

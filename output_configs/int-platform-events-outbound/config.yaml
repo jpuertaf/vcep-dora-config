@@ -1,0 +1,23 @@
+project_name: Platform Events Outbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Platform Events Outbound
+    source: GITHUB
+    repo: vcep-int-platform-events-outbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-platform-events-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-platform-events-logic CI
+        job: Job

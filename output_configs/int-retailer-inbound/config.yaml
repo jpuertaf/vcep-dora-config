@@ -1,0 +1,23 @@
+project_name: Retailer Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Retailer Inbound
+    source: GITHUB
+    repo: vcep-int-retailer-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-retailer-inbound-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-retailer-inbound-logic CI
+        job: Job

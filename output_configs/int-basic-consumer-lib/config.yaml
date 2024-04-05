@@ -1,0 +1,23 @@
+project_name: Basic Consumer Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Basic Consumer Lib
+    source: GITHUB
+    repo: vcep-int-basic-consumer-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-basic-consumer-nuget CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-basic-consumer-nuget CI
+        job: Job

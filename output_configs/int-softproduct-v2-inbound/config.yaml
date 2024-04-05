@@ -1,0 +1,23 @@
+project_name: Softproduct V2 Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Softproduct V2 Inbound
+    source: GITHUB
+    repo: vcep-int-softproduct-v2-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-soft-product-v2-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-soft-product-v2-logic CI
+        job: Job

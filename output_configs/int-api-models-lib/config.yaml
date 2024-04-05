@@ -1,0 +1,23 @@
+project_name: Api Models Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Api Models Lib
+    source: GITHUB
+    repo: vcep-int-api-models-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-api-models-nuget CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-api-models-nuget CI
+        job: Job

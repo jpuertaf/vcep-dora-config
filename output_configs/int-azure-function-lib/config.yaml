@@ -1,0 +1,23 @@
+project_name: Azure Function Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Azure Function Lib
+    source: GITHUB
+    repo: vcep-int-azure-function-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-azure-function-nuget CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-azure-function-nuget CI
+        job: Job

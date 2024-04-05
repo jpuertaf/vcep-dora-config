@@ -1,0 +1,23 @@
+project_name: Adobe Sign Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Adobe Sign Inbound
+    source: GITHUB
+    repo: vcep-int-adobe-sign-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-adobe-sign-inbound-logic-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-adobe-sign-inbound-logic-CI
+        job: Job

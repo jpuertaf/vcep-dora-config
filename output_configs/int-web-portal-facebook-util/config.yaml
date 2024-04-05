@@ -1,0 +1,23 @@
+project_name: Web Portal Facebook Util
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Web Portal Facebook Util
+    source: GITHUB
+    repo: vcep-int-web-portal-facebook-util
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-web-portal-facebook-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-web-portal-facebook-logic CI
+        job: Job

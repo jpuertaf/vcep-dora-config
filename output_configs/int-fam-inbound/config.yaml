@@ -1,0 +1,23 @@
+project_name: Fam Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Fam Inbound
+    source: GITHUB
+    repo: vcep-int-fam-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-fam-inbound-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-fam-inbound-logic CI
+        job: Job

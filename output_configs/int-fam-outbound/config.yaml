@@ -1,0 +1,23 @@
+project_name: Fam Outbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Fam Outbound
+    source: GITHUB
+    repo: vcep-int-fam-outbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-fam-outbound-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-fam-outbound-logic CI
+        job: Job

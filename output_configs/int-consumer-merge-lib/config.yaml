@@ -1,0 +1,23 @@
+project_name: Consumer Merge Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Consumer Merge Lib
+    source: GITHUB
+    repo: vcep-int-consumer-merge-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-consumer-merge-nuget
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-consumer-merge-nuget
+        job: Job

@@ -1,0 +1,23 @@
+project_name: Ccs Inbound Orders
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Ccs Inbound Orders
+    source: GITHUB
+    repo: vcep-int-ccs-inbound-orders
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: vcep-int-ccs-inbound-orders-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: vcep-int-ccs-inbound-orders-CI
+        job: Job

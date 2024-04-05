@@ -1,0 +1,23 @@
+project_name: Vehicle Contract Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Vehicle Contract Inbound
+    source: GITHUB
+    repo: vcep-int-vehicle-contract-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-vehicle-contract-inbound-logic-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-vehicle-contract-inbound-logic-CI
+        job: Job

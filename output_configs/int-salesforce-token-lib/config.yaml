@@ -1,0 +1,23 @@
+project_name: Salesforce Token Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Salesforce Token Lib
+    source: GITHUB
+    repo: vcep-int-salesforce-token-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-salesforce-token-nuget CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-salesforce-token-nuget CI
+        job: Job

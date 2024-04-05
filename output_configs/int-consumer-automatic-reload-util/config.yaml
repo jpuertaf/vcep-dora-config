@@ -1,0 +1,23 @@
+project_name: Consumer Automatic Reload Util
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Consumer Automatic Reload Util
+    source: GITHUB
+    repo: vcep-int-consumer-automatic-reload-util
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-consumer-automatic-reload-CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-consumer-automatic-reload-CI
+        job: Job

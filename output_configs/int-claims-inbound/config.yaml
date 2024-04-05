@@ -1,0 +1,23 @@
+project_name: Claims Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Claims Inbound
+    source: GITHUB
+    repo: vcep-int-claims-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-claims-inbound-function CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-claims-inbound-function CI
+        job: Job

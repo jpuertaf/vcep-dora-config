@@ -1,0 +1,23 @@
+project_name: Secretshandler Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Secretshandler Lib
+    source: GITHUB
+    repo: vcep-int-secretshandler-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-secretshandler-nuget CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-secretshandler-nuget CI
+        job: Job

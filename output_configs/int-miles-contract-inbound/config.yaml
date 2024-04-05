@@ -1,0 +1,23 @@
+project_name: Miles Contract Inbound
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Miles Contract Inbound
+    source: GITHUB
+    repo: vcep-int-miles-contract-inbound
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-miles-logic CI
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-miles-logic CI
+        job: Job

@@ -1,0 +1,22 @@
+project_name: PROJECT_NAME>
+cluster: Customer Care & Support
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  - name: <SERVICE_NAME>
+    source: GITHUB
+    repo: <GIT_REPO_NAME>
+    project: RCXP
+    environments:
+      - name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        project: RCXP
+        workflow: {pipeline_name}
+        job: {job_name}
+      - name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        project: RCXP
+        workflow: {pipeline_name}
+        job: {job_name}

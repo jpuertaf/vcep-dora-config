@@ -1,0 +1,23 @@
+project_name: Base Servicebus Lib
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Base Servicebus Lib
+    source: GITHUB
+    repo: vcep-int-base-servicebus-lib
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-base-servicebus-nuget
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: int-base-servicebus-nuget
+        job: Job

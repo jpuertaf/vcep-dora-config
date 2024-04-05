@@ -1,0 +1,23 @@
+project_name: Inbound Topics
+cluster: Customer Care
+team: Vcep Integration Team
+tags: [Integration Platform, VCEP]
+services:
+  -
+    name: Inbound Topics
+    source: GITHUB
+    repo: vcep-int-inbound-topics
+    project: RCXP
+    environments:  
+      -
+        name: uat
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: vcep-int-inbound-topics-infra
+        job: Job
+      -
+        name: prod-emea
+        branch: master
+        pipeline: AZURE_PIPELINES
+        workflow: vcep-int-inbound-topics-infra
+        job: Job
